@@ -1,8 +1,20 @@
-name: hello-world
-on: push
+name: Build on Main and PR
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
-  my-job:
+  build:
+    if: ${{ github.event_name == 'push' || github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
+
     steps:
-      - name: my-step
-        run: echo "Hello World!"
+      - name: Checkout code
+        uses: actions\/checkout@v2
+
+      # Add more build steps here
