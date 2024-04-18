@@ -1,4 +1,4 @@
-name: Vercel Create Preview URL message
+name: Create Preview URL message
 on:
   pull_request:
     types: [opened, ready_for_review]
