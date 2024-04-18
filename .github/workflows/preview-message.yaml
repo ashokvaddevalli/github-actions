@@ -1,7 +1,7 @@
 name: Create Preview URL message
 on:
   pull_request:
-    types: [opened, ready_for_review]
+    
 jobs:
   Deploy-Production:
     runs-on: ubuntu-latest
