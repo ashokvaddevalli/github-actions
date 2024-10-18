@@ -5,13 +5,16 @@ on:
     
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: node:20-alpine AS prod
     steps:
       - name: Checkout code
-        uses: actions\/checkout@v2
-           
-      - name: Deploy Allure report to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
+        uses: actions/checkout@v3
+      - name: verify npm   
+        run: |
+          npm -v
+          npm
+    #  - name: Deploy Allure report to GitHub Pages
+    #    uses: peaceiris/actions-gh-pages@v4
    #     if: always()
   #      with:
   #        github_token: ${{ secrets.GHE_TOKEN }}
