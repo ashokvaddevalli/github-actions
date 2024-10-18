@@ -5,7 +5,8 @@ on:
     
 jobs:
   build:
-    runs-on: node:20-alpine AS prod
+    runs-on: ubuntu-latest 
+    container: node:20-alpine AS prod
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
